@@ -59,13 +59,9 @@ export const SideBarContainer = styled.div`
   transition: all 0.2s ease-in-out;
   border: 1px solid #4d4d4d;
 
-  @media ${devices.mobileL} {
-    position: sticky;
-    bottom: 0;
-    order: 2;
-    min-width: 100vw;
-  }
   @media ${devices.laptop} {
+    border-right: none;
+    border-left: none;
     position: sticky;
     bottom: 0;
     flex-direction: row;
