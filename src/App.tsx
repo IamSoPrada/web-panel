@@ -18,6 +18,7 @@ export const App: React.FC<AppProps> = (props) => {
         <SideBar />
         <Main />
       </Layout>
+
       {/* <Footer /> */}
     </AppContainer>
   );

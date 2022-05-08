@@ -18,7 +18,7 @@ export const Main: React.FC<MainProps> = () => {
       </WebPanelContainer>
       <WebPanelContainer>
         <PanelCardBig title="Audience reach" descr="271 people" />
-        <PanelCardMiddle title="Reach by device" descr="271 people" />
+        <PanelCardSmall title="Followers" descr="25 new followers" />
       </WebPanelContainer>
       <WebPanelContainer>
         <PanelCardSmall title="Gender / Age" descr="271 people" />

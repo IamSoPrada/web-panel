@@ -3,18 +3,16 @@ import { devices } from "@/media";
 
 export const AppContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   background-color: #212427;
 `;
 
 export const LayoutContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
 `;
 
 export const HeaderContainer = styled.header`
@@ -28,11 +26,12 @@ export const HeaderContainer = styled.header`
 export const MainContainer = styled.main`
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-
-  flex: 1;
   width: 100%;
-  
+  @media ${devices.laptop} {
+    justify-content: flex-start;
+  }
 `;
 
 export const FooterContainer = styled.footer`
@@ -81,7 +80,7 @@ export const CardContainer = styled.div<CardContainerProps>`
   gap: var(--gap);
   min-width: 250px;
   max-width: ${({ size }) =>
-    size === "small" ? "350px" : size === "middle" ? "500px" : "700px"};
+    size === "small" ? "33%" : size === "middle" ? "50%" : "70%"};
 `;
 
 export const CardTitle = styled.h3`
@@ -109,10 +108,14 @@ export const CardBody = styled.div`
 
 export const WebPanelContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  width: 80%;
+  justify-content: space-between;
   padding: var(--common-padding);
   gap: var(--gap);
-  align-items: center;
+
+  @media ${devices.laptop} {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Button = styled.button`
