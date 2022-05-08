@@ -1,6 +1,42 @@
-*, *::after, *::before {
+:root {
+  --gap: 16px;
+  --common-padding: 16px;
+  --margin: 16px;
+  --card-padding: 24px;
+  --btn-padding: 10px 15px;
+  --color-primary: #cacaca;
+}
+
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  color: #cacaca;
+}
+
+table,
+td {
+  border: 1px solid #333;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 10px;
+  fill: var(--color-primary);
+  transition: all 0.1s ease-in;
+}
+svg:hover {
+  fill: #fff;
 }
