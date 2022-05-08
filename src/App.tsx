@@ -13,13 +13,10 @@ type AppProps = {
 export const App: React.FC<AppProps> = (props) => {
   return (
     <AppContainer>
-      {/* <Header /> */}
       <Layout>
         <SideBar />
         <Main />
       </Layout>
-
-      {/* <Footer /> */}
     </AppContainer>
   );
 };

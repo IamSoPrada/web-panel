@@ -11,6 +11,7 @@ type MainProps = {
 export const Main: React.FC<MainProps> = () => {
   return (
     <MainContainer>
+      Statistics
       <WebPanelContainer>
         <PanelCardSmall title="Friends" descr="271 people" />
         <PanelCardSmall title="Unique visitors" descr="43 visitors" />
