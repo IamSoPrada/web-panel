@@ -8,7 +8,7 @@ type MainProps = {
   children?: React.ReactNode;
 };
 
-export const Main: React.FC<MainProps> = () => {
+export const Dashboard: React.FC<MainProps> = () => {
   return (
     <MainContainer>
       Statistics

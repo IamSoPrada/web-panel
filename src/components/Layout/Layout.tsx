@@ -1,4 +1,6 @@
 import React from "react";
+import { SideBar } from "@/components/SideBar";
+import { Outlet } from "react-router-dom";
 import { LayoutContainer } from "@/styles";
 
 type LayoutProps = {
@@ -6,5 +8,10 @@ type LayoutProps = {
 };
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return <LayoutContainer>{children}</LayoutContainer>;
+  return (
+    <LayoutContainer>
+      <SideBar />
+      <Outlet />
+    </LayoutContainer>
+  );
 };

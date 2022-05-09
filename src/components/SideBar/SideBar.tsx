@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   SideBarContainer,
   HomeIcon,
   MessagesIcon,
-  Button,
   AdjustmentsIcon,
-  WheatherIcon,
+  WeatherIcon,
   ToDoIcon,
   NewsIcon,
 } from "@/styles";
@@ -15,24 +15,24 @@ type SideBarProps = {};
 export const SideBar: React.FC<SideBarProps> = () => {
   return (
     <SideBarContainer>
-      <Button>
+      <Link to="/">
         <HomeIcon />
-      </Button>
-      <Button>
+      </Link>
+      <Link to="/todos">
         <ToDoIcon />
-      </Button>
-      <Button>
+      </Link>
+      <Link to="/chat">
         <MessagesIcon />
-      </Button>
-      <Button>
+      </Link>
+      <Link to="/news">
         <NewsIcon />
-      </Button>
-      <Button>
-        <WheatherIcon />
-      </Button>
-      <Button>
+      </Link>
+      <Link to="/weather">
+        <WeatherIcon />
+      </Link>
+      <Link to="/settings">
         <AdjustmentsIcon />
-      </Button>
+      </Link>
     </SideBarContainer>
   );
 };
