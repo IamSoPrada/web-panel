@@ -10,11 +10,11 @@ type MainProps = {
 
 export const Dashboard: React.FC<MainProps> = () => {
   return (
-    <MainContainer>
+    <MainContainer justify="center">
       <WebPanelContainer>
-        <PanelCardSmall title="Friends" descr="271 people" />
-        <PanelCardSmall title="Visitors" descr="43 visitors" />
-        <PanelCardSmall title="Followers" descr="25 new followers" />
+        <PanelCardSmall title="Today" descr="271 people" />
+        <PanelCardSmall title="Tomorrow" descr="43 visitors" />
+        <PanelCardSmall title="Weather" descr="25 new followers" />
       </WebPanelContainer>
       <WebPanelContainer>
         <PanelCardBig title="Audience reach" descr="271 people" />

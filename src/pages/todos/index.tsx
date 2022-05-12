@@ -1,3 +1,3 @@
-import { Todos } from "./Todos";
+import { Lists } from "./Todos";
 
-export default Todos;
+export default Lists;

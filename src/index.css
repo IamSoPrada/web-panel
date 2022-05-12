@@ -5,6 +5,7 @@
   --card-padding: 24px;
   --btn-padding: 10px 15px;
   --color-primary: #cacaca;
+  --border-radius: 13px;
 }
 
 *,
@@ -19,14 +20,7 @@ body {
   color: #cacaca;
 }
 
-table,
-td {
-  border: 1px solid #333;
+a {
+  margin: 0;
+  padding: 0;
 }
-
-thead,
-tfoot {
-  background-color: #333;
-  color: #fff;
-}
-

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { devices } from "@/media";
 
+/* App containers */
 export const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -20,19 +21,27 @@ export const LayoutContainer = styled.div`
 
 export const HeaderContainer = styled.header`
   display: flex;
+  position: sticky;
+  top: 0;
+  min-width: 100vw;
   padding: 0 16px;
   justify-content: space-between;
   align-items: center;
   height: 54px;
 `;
 
-export const MainContainer = styled.main`
+type MainContainerProps = {
+  justify?: "center" | "start" | "end";
+};
+
+export const MainContainer = styled.main<MainContainerProps>`
   display: flex;
   padding: var(--common-padding);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   flex: 1;
+  gap: var(--gap);
   @media ${devices.laptop} {
     justify-content: flex-start;
   }
@@ -41,8 +50,25 @@ export const MainContainer = styled.main`
 export const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  justify-content: center;
   height: 54px;
+  position: absolute;
+  bottom: 20px;
+  left: 100px;
+  min-width: calc(100vw - 120px);
+  @media ${devices.laptop} {
+    display: none;
+  }
+`;
+
+export const FooterLinksContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  border-radius: var(--border-radius);
+  padding: 10px;
+  background-color: #1b1d20;
 `;
 
 export const SideBarContainer = styled.div`
@@ -72,6 +98,38 @@ export const SideBarContainer = styled.div`
   }
 `;
 
+type WrapperProps = {
+  direction: "row" | "column";
+  justify?: "center" | "start" | "end" | "space-between" | "space-around";
+  align?: "center" | "start" | "end";
+  bgColor?: string;
+  maxHeight?: string;
+  flexWrap?: boolean;
+};
+
+export const Wrapper = styled.div<WrapperProps>`
+  display: flex;
+  flex-wrap: ${({ flexWrap }) => (flexWrap ? "wrap" : "nowrap")};
+  padding: var(--common-padding);
+  justify-content: ${({ justify }) => justify || "center"};
+  align-items: ${({ align }) => align || "center"};
+  flex-direction: ${({ direction }) => direction || "row"};
+  gap: var(--gap);
+  width: 100%;
+  overflow-y: ${({ maxHeight }) => (maxHeight ? "auto" : "none")};
+  max-height: ${({ maxHeight }) => maxHeight || "100%"};
+  background-color: ${({ bgColor }) => bgColor || "transparent"};
+`;
+
+export const FormContainer = styled.form`
+  display: flex;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  flex-direction: column;
+`;
+
+/* Components */
 interface CardContainerProps {
   size: "small" | "middle" | "big";
 }
@@ -82,7 +140,7 @@ export const CardContainer = styled.div<CardContainerProps>`
   width: 100%;
   background-color: #282c31;
   padding: var(--card-padding);
-  border-radius: 13px;
+  border-radius: var(--border-radius);
   border: 1px solid #4d4d4d;
   gap: var(--gap);
   min-width: 100px;
@@ -139,14 +197,61 @@ export const WebPanelContainer = styled.div`
   }
 `;
 
-export const Button = styled.button`
+type ButtonProps = {
+  outlined?: boolean;
+};
+
+export const Button = styled.button<ButtonProps>`
+  display: flex;
+  max-width: fit-content;
+  align-items: center;
+  vertical-align: middle;
+  align-self: center;
+  padding: 8px 16px;
+  outline: none;
+  border: ${({ outlined }) =>
+    outlined ? `1px solid var(--color-primary)` : `none`};
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: #fff;
+  }
+`;
+
+export const StyledInput = styled.input`
   outline: none;
   border: none;
-  background-color: transparent;
-  cursor: pointer;
-  &:hover {
-    color: #ff0000;
+  border-radius: var(--border-radius);
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  background-color: #1b1d20;
+  transition: all 0.3s ease-in;
+
+  @media ${devices.laptop} {
+    font-size: 1rem;
+
+    &:active {
+      width: 100%;
+    }
   }
+`;
+
+export const ListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: var(--common-padding);
+  width: 100%;
+  max-width: 300px;
+  background-color: #4c4c4c;
+  border: 1px solid var(--color-primary);
+  color: #fff;
+  gap: var(--gap);
+  border-radius: var(--border-radius);
 `;
 
 /* ICONS */
@@ -229,6 +334,28 @@ export const NewsIcon = () => {
         clipRule="evenodd"
       />
       <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
+    </Svg>
+  );
+};
+export const WorldIcon = () => {
+  return (
+    <Svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
+        clipRule="evenodd"
+      />
+    </Svg>
+  );
+};
+export const PlusIcon = () => {
+  return (
+    <Svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+        clipRule="evenodd"
+      />
     </Svg>
   );
 };
