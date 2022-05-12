@@ -110,11 +110,11 @@ type WrapperProps = {
 export const Wrapper = styled.div<WrapperProps>`
   display: flex;
   flex-wrap: ${({ flexWrap }) => (flexWrap ? "wrap" : "nowrap")};
-  padding: var(--common-padding);
+  padding: ${({ maxHeight }) => (maxHeight ? "0px" : "var(--common-padding)")};
   justify-content: ${({ justify }) => justify || "center"};
   align-items: ${({ align }) => align || "center"};
   flex-direction: ${({ direction }) => direction || "row"};
-  gap: var(--gap);
+  gap: ${({ maxHeight }) => (maxHeight ? "4px" : "var(--gap)")};
   width: 100%;
   overflow-y: ${({ maxHeight }) => (maxHeight ? "auto" : "none")};
   max-height: ${({ maxHeight }) => maxHeight || "100%"};
@@ -123,7 +123,6 @@ export const Wrapper = styled.div<WrapperProps>`
 
 export const FormContainer = styled.form`
   display: flex;
-  padding: 25px;
   width: 100%;
   max-width: 500px;
   flex-direction: column;
@@ -247,11 +246,10 @@ export const ListContainer = styled.div`
   padding: var(--common-padding);
   width: 100%;
   max-width: 300px;
-  background-color: #4c4c4c;
+  background-color: #737373;
   border: 1px solid var(--color-primary);
   color: #fff;
   gap: var(--gap);
-  border-radius: var(--border-radius);
 `;
 
 /* ICONS */
