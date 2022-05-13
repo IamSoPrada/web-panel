@@ -5,7 +5,7 @@ import {
   CardDescr,
   CardHeader,
   CardBody,
-} from "@/styles";
+} from "@/styles/todo";
 
 type PanelCardBigProps = {
   title: string;

@@ -1,9 +1,7 @@
 import React from "react";
 import { SideBar } from "@/components/SideBar";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Outlet } from "react-router-dom";
-import { LayoutContainer } from "@/styles";
+import { LayoutContainer } from "@/styles/common";
 
 type LayoutProps = {
   children?: React.ReactNode;
@@ -11,12 +9,9 @@ type LayoutProps = {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
-      <LayoutContainer>
-        <SideBar />
-        <Outlet />
-      </LayoutContainer>
-      <Footer />
-    </>
+    <LayoutContainer>
+      <SideBar />
+      <Outlet />
+    </LayoutContainer>
   );
 };

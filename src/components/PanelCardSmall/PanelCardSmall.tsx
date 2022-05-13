@@ -4,10 +4,10 @@ import {
   CardTitle,
   CardDescr,
   CardHeader,
-  Button,
   CardBody,
-  SettingsIcon,
-} from "@/styles";
+} from "@/styles/todo";
+import { Button } from "@/styles/common";
+import { SettingsIcon } from "@/styles/icons";
 
 type PanelCardSmallProps = {
   title: string;

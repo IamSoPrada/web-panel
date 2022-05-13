@@ -1,5 +1,6 @@
 import React from "react";
-import { MainContainer, WebPanelContainer } from "@/styles";
+import { MainContainer } from "@/styles/common";
+import { WebPanelContainer } from "@/styles/home";
 import { PanelCardSmall } from "@/components/PanelCardSmall";
 import { PanelCardMiddle } from "@/components/PanelCardMiddle";
 import { PanelCardBig } from "@/components/PanelCardBig";

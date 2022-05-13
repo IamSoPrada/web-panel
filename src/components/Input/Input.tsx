@@ -1,12 +1,12 @@
 import React from "react";
-import { StyledInput } from "@/styles";
 import { useFocus } from "@/hook/useFocus";
+import { StyledInput } from "@/styles/todo";
 
 type InputProps = {
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  type: string;
-  value: string;
-  name: string;
+  handleInputChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
+  value?: string;
+  name?: string;
   placeholder: string;
 };
 

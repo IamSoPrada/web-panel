@@ -3,14 +3,9 @@ import { v4 as uuid } from "uuid";
 import randomColor from "randomcolor";
 import { IList, ITodo } from "@/types/types";
 import { Input } from "@/components/Input";
-import {
-  ListContainer,
-  Button,
-  PlusIcon,
-  Wrapper,
-  CardTitle,
-  FormContainer,
-} from "@/styles";
+import { PlusIcon } from "@/styles/icons";
+import { ListContainer, CardTitle } from "@/styles/todo";
+import { Wrapper, Button, FormContainer } from "@/styles/common";
 
 interface ColumnContainerProps extends IList {
   addTodo: (todo: ITodo) => void;

@@ -2,10 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "@/pages/home";
 import { NoMatch } from "@/pages/no-match";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Layout } from "@/components/Layout";
-import { AppContainer } from "./styles";
+import { AppContainer } from "@/styles/common";
 
 const News = React.lazy(() => import("./pages/news"));
 const Todos = React.lazy(() => import("./pages/todos"));

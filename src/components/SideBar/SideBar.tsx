@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { SideBarContainer } from "@/styles/common";
 import {
-  SideBarContainer,
   HomeIcon,
   MessagesIcon,
   AdjustmentsIcon,
   WeatherIcon,
   ToDoIcon,
   NewsIcon,
-} from "@/styles";
+} from "@/styles/icons";
 
 type SideBarProps = {};
 

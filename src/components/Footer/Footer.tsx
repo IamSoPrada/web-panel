@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FooterContainer, FooterLinksContainer, WorldIcon } from "@/styles";
+import { WorldIcon } from "@/styles/icons";
+import { FooterContainer, FooterLinksContainer } from "@/styles/common";
 
 type FooterProps = {
   children?: React.ReactNode;

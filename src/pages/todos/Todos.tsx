@@ -2,14 +2,9 @@ import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { IList, ITodo } from "@/types/types";
 import { List } from "@/components/TodoList";
-import {
-  MainContainer,
-  Wrapper,
-  Button,
-  PlusIcon,
-  FormContainer,
-} from "@/styles";
+import { MainContainer, Wrapper, Button, FormContainer } from "@/styles/common";
 import { Input } from "@/components/Input";
+import { PlusIcon } from "@/styles/icons";
 
 interface ListsProps {
   children?: React.ReactNode;
